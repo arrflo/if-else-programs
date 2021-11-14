@@ -12,7 +12,7 @@ first, second, third = getNumber()
 
 #find the lowest number using only if-else statement
 if first == second == third:    #equal lahat
-    print ("All numbers are equal")
+    print ("All numbers are equal.")
 else: 
     if first == second and first < third:   #equal yung first at second
         print(f"{first} is the smallest number.")
