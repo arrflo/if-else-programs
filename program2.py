@@ -39,4 +39,4 @@ else:
                                     print (f"{second} is the smallest number.")
                                 else:
                                     if third < first and third < second:    #third and smallest
-                                        print(f"{third} is the smallest number.")   #display the lowest number
+                                        print(f"{third} is the smallest number.")   
