@@ -19,19 +19,39 @@ def getGradePercentage():
     return _gradepercentage
 
 #other functions
-def conditions():
-    _incomplete = input("If the student is incomplete, type 'Y' and 'N' if not.")
-    _withdrawn = input("If the student is withdrawn, type 'Y' and 'N' if not.")
-    _dropped = input("If the student is dropped out, type 'Y' and 'N' if not.")
-    return _incomplete, _withdrawn, _dropped
+def getIncomplete():
+    _incomplete = int(input("Is the student incomplete? Type '1' if yes and '0' if not."))
+    return _incomplete
 
-#variables
-incomplete, withdrawn, dropped = conditions ()
-gPercent = getGradePercentage()
+def getWithdrawn():
+    _withdrawn = int(input("Is the student withdrawn?, Type '1' if yes and '0' if not."))
+    return _withdrawn
+
+def getDropped():
+    _dropped = int(input("Is the student dropped out?, Type '1' if yes and '0' if not."))
+    return _dropped
 
 
 # aask kung ang student ba ay incomplete, withdrawn, dropout
-
+incomplete = getIncomplete ()
+if incomplete == 1:
+    print("Input grade: n/a")
+    print("Grade/Mark: Inc.")
+    print("Description: Incomplete")
+else:
+    withdrawn = getWithdrawn ()
+    if incomplete == 0 and withdrawn == 1:
+        print("Input grade: n/a")
+        print("Grade/Mark: W")
+        print("Description: Withdrawn")
+    else:
+        dropped = getDropped ()
+        if withdrawn == 0 and dropped == 1:
+            print("Input grade: n/a")
+            print("Grade/Mark: D")
+            print("Description: Dropped")
+        else:
+            gPercent = getGradePercentage()
 
 #Example:
 #Input grade: 87.6
