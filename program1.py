@@ -20,38 +20,66 @@ def getGradePercentage():
 
 #other functions
 def getIncomplete():
-    _incomplete = int(input("Is the student incomplete? Type '1' if yes and '0' if not."))
+    _incomplete = int(input("Is the student incomplete? Type '1' if yes and '0' if not:"))
     return _incomplete
 
 def getWithdrawn():
-    _withdrawn = int(input("Is the student withdrawn?, Type '1' if yes and '0' if not."))
+    _withdrawn = int(input("Is the student withdrawn? Type '1' if yes and '0' if not:"))
     return _withdrawn
 
 def getDropped():
-    _dropped = int(input("Is the student dropped out?, Type '1' if yes and '0' if not."))
+    _dropped = int(input("Is the student dropped out? Type '1' if yes and '0' if not:"))
     return _dropped
 
 
 # aask kung ang student ba ay incomplete, withdrawn, dropout
 incomplete = getIncomplete ()
 if incomplete == 1:
-    print("Input grade: n/a")
     print("Grade/Mark: Inc.")
     print("Description: Incomplete")
 else:
     withdrawn = getWithdrawn ()
     if incomplete == 0 and withdrawn == 1:
-        print("Input grade: n/a")
         print("Grade/Mark: W")
         print("Description: Withdrawn")
     else:
         dropped = getDropped ()
         if withdrawn == 0 and dropped == 1:
-            print("Input grade: n/a")
             print("Grade/Mark: D")
             print("Description: Dropped")
         else:
-            gPercent = getGradePercentage()
+            gPercent = getGradePercentage()         #start ng input ng grade
+            rdgpercent = round(gPercent)
+            if dropped == 0  and rdgpercent >= 97 and rdgpercent <= 100:
+                print("Grade/Mark: 1.0")
+                print("Description: Excellent")
+            elif rdgpercent >= 94 and rdgpercent <= 96:
+                print("Grade/Mark: 1.25")
+                print("Description: Excellent")
+            elif rdgpercent >= 91 and rdgpercent <= 93:
+                print("Grade/Mark: 1.5")
+                print("Description: Very Good")
+            elif rdgpercent >= 88 and rdgpercent <= 90:
+                print("Grade/Mark: 1.75")
+                print("Description: Very Good")
+            elif rdgpercent >= 85 and rdgpercent <= 87:
+                print("Grade/Mark: 2.0")
+                print("Description: Good")
+            elif rdgpercent >= 82 and rdgpercent <= 84:
+                print("Grade/Mark: 2.25")
+                print("Description: Good")
+            elif rdgpercent >= 79 and rdgpercent <= 81:
+                print("Grade/Mark: 2.5")
+                print("Description: Satisfactory")
+            elif rdgpercent >= 76 and rdgpercent <= 78:
+                print("Grade/Mark: 2.75")
+                print("Description: Satisfactory")
+            elif rdgpercent == 75:
+                print("Grade/Mark: 3.0")
+                print("Description: Passing")
+            elif rdgpercent >= 65 and rdgpercent <= 74:
+                print("Grade/Mark: 5.0")
+                print("Description: Failure")
 
 #Example:
 #Input grade: 87.6
