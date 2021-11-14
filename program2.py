@@ -3,9 +3,9 @@
 
 #create a program that asks 3 numbers
 def getNumber ():
-    _first = float(input("First Number:"))
-    _second = float(input("Second Number:"))
-    _third = float(input("Third Number:"))
+    _first = int(input("First Number:"))
+    _second = int(input("Second Number:"))
+    _third = int(input("Third Number:"))
     return _first, _second, _third
 
 first, second, third = getNumber()
